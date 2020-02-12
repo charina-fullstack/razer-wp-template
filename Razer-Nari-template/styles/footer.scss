@@ -1,0 +1,163 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+.footer {
+  background-color: $mid-black;
+  height: 100%;
+
+  .footer-logo {
+    padding-top: 32px;
+    width: 170px;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 35px;
+  }
+
+  .footer-menu-holder {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    
+    .footer-item {
+      padding-top: 41px;
+
+      font-size: 12px;
+      font-weight: 900;
+      text-align: center;
+      list-style-type: none;
+
+      .footer-link {
+        padding: 0 38px;
+          
+        color: $text-color;
+      }
+    }
+  }
+
+  .social-holder {
+    padding-top: 32px;
+
+    .list-social {
+      margin-right: 3px;
+      width: 18px;
+    }
+  }
+
+  .footer-copyright-holder {
+    padding-top: 10px;
+
+    // margin: 0 340px;
+
+    font-size: 12px;
+    text-align: center;
+
+    .footer-copyright {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0;
+
+      letter-spacing: 1.5px;
+
+      border-top: .5px solid $text-color;
+    }
+  }
+}
+
+@include respond-to (md-down) {
+  .footer {
+    .footer-menu-holder{
+      .footer-item {
+        .footer-link {
+        padding: 0 40px;
+        }
+      }
+    } 
+  }
+}
+
+@include respond-to (sm) {
+  .footer {
+    .footer-wrapper {
+      flex-direction: column;
+    }
+  
+    .footer-menu-holder{
+      display: block;
+  
+      .footer-item {
+        padding-top: 22px;
+  
+        text-align: left;
+  
+        .footer-link {
+        padding: 0 0;
+        }
+      }
+    } 
+  
+    .social-holder {
+      align-self: flex-start;
+      padding-top: 15px;
+  
+      .list-social {
+        margin-right: 17px;
+      }
+    }
+  }
+}
+
+@include respond-to (xs) {
+  .footer {
+    .footer-wrapper {
+      flex-direction: column;
+    }
+  
+    .footer-logo {
+      padding-top: 45px;
+      padding-left: 40px;
+      width: 210px;
+    }
+  
+    .footer-menu-holder {
+      flex-direction: column;
+  
+      padding-top: 20px;
+  
+      .footer-item {
+        padding-top: 11px;
+  
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        text-align: left;
+      }
+    }
+  
+    .social-holder {
+      align-self: flex-start;
+      padding-top: 15px;
+      padding-left: 38px;
+  
+      .list-social {
+        margin-right: 17px;
+      }
+    }
+  
+    .footer-copyright-holder {
+      margin: 0;
+  
+      .footer-copyright {
+        margin: 0 auto;
+        width: 80%;
+  
+        font-size: 13px;
+        text-align: left;
+      }
+    }
+  }
+}

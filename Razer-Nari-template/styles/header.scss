@@ -1,0 +1,365 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.header {
+  .navbar {
+    position: fixed;
+    z-index: 15;
+
+    padding: 15px 0;
+    width: 100%;
+  
+    background-color: $black;
+  
+    .navbar-brand {
+      color: transparent;
+    }
+
+    .logo {
+      height: 26px;
+    }
+  
+    .nav-link {
+      font-size: 15px;
+      font-weight: 900;
+      color: $text-color;
+      text-transform: uppercase;
+    }
+
+    .nav-item {
+      margin-right: 10px;
+
+      &:last-child {
+        margin: 0 auto;
+      }
+    }
+
+    .btn-down {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    .dropdown-menu {
+      top: 100%;
+
+      width: 200px;
+
+      background-color: $black;
+
+      .dropdown-item {
+        color: $mid-grey;
+
+        &:hover {
+          position: relative;
+
+          color: $neon-green;
+
+          background-color: transparent;
+        }
+      }
+    }
+
+    .dropdown-sub:hover{
+      .btn-dropdown-menu {
+        position: absolute;
+        top: 14px;
+        right: 15px;
+
+        display: block;
+        padding-left: 20px;
+
+        color: $neon-green;
+      }
+    }
+
+    .sub-menu{
+      position: absolute;
+      top: 163px;
+      left: 197px;
+
+      display: none;
+      padding-left: 0;
+      width: 150px;
+
+      list-style: none;
+      background-color: $black;
+
+      li .sub-name {
+        display: none;
+      }
+    }
+
+    .navbar-toggler {
+      .icon-bar {
+        margin-right: 15px;
+
+        background: $mid-grey;
+      }
+    }
+  }
+}
+
+@include respond-to (md-up){
+  .header {
+    .navbar {
+      .btn-dropdown {
+        display: none;
+      }
+
+      .btn-dropdown-menu {
+        display: none;
+      }
+    
+      .menu-name {
+        display: none;
+      }
+
+      .navbar-collapse {
+        .menu-title {
+          display: none;
+        }
+    
+        .dropdown-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 11px;
+    
+          font-size: 14px;
+    
+          .dropdown-sub {
+            @include on-event {
+              color: $neon-green;
+    
+              .sub-menu {
+                display: block;
+              }
+    
+              .btn-dropdown-menu {
+                display: block;
+                padding-left: 20px;
+                color: $neon-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to (md-down) {
+  .header {
+    .navbar {
+      .nav-link {
+        font-size: 13px;
+      }
+
+      .nav-item {
+        margin-top: 7px;
+        margin-right: 0;
+      }
+
+      .logo {
+        height: 20px;
+      }
+    }
+  }
+}
+
+@include respond-to (sm-down) {
+  .header {
+    .navbar {
+      .btn-dropdown-menu {
+        display: none;
+      }
+    
+      .nav-link {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 35px;
+        padding-left: 35px;
+    
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    
+      .btn-down {
+        display: none;
+      }
+      
+      .navbar-collapse {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0;
+        z-index: 10;
+    
+        padding: 0 92px;
+        width: 100%;
+        overflow: hidden;
+    
+        background-color: rgb(0, 0, 0);
+    
+        .menu-title {
+          position: relative;
+    
+          margin: 0 35px;
+          
+          .title-text {
+            margin-top: 28px;
+            font-size: 22px;
+            font-weight: 900;
+          }
+        }
+    
+        .nav-item {
+          .nav-link {
+            @include on-event {
+              color: $neon-green;
+    
+              .btn-dropdown {
+                display: block;
+    
+                color: $neon-green;
+              }
+            }
+          }
+    
+          &:last-child {
+            margin-top: 30px;
+          }
+        }
+      }
+    
+      .dropdown-menu {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0;
+        z-index: 20;
+    
+        padding: 0 92px;
+        width: 100%;
+        overflow: hidden;
+    
+        background-color: rgb(0, 0, 0);
+    
+        .menu-name {
+          position: relative;
+    
+          margin-left: 0;
+          margin-top: 15px;
+    
+          font-size: 20px;
+          
+    
+          .close-button {
+            position: absolute;
+            top: 6px;
+            right: 14px;
+          }
+        }
+    
+        .sub-name {
+          margin-top: 15px;
+        }
+
+        .btn-dropdown {
+          display: none;
+        } 
+    
+        .dropdown-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 11px;
+    
+          font-size: 20px;
+    
+          background-color: transparent;
+    
+          &:first-child {
+            display: block;
+            margin-left: 0;
+    
+            font-weight: 900;
+            text-transform: uppercase;
+    
+            .back-btn {
+              padding-right: 10px;
+            }
+          }
+    
+          .dropdown-sub {
+            @include on-event {
+              color: $neon-green;
+    
+              .sub-menu {
+                display: block;
+              }
+    
+              .btn-dropdown-menu {
+                display: block;
+                padding-left: 20px;
+                color: $neon-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include respond-to (xs) {
+  .header {
+    .navbar {
+      padding: 8px 0 15px;
+      
+      .nav-link {
+        padding-left: 30px;
+      }
+    
+      .navbar-brand {
+        margin-left: 28px;
+      }
+    
+      .nav-icon {
+        margin-right: 25px;
+      }
+    
+      .logo {
+        height: 17px;
+      }
+    
+      .navbar-collapse {
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        padding-left: 10px;
+      }
+    
+      .click-btn {
+        margin: 0 auto;
+        width: 250px;
+        height: 50px;
+    
+        font-size: 15px;
+    
+        border-radius: 35px;
+      }
+    
+      .btn-down {
+        margin-left: 218px;
+    
+        font-size: 27px;
+    
+        transform: rotate(270deg) translate(13px, 13px);
+      }
+    }
+  }
+}
